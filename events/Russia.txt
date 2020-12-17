@@ -21917,7 +21917,12 @@ country_event = { #Free Illyria
 					limit = {
 						OR = {
 							state = 102
+							state = 1101
+							state = 1103
+							state = 1104
 							state = 736
+							state = 1100
+							state = 1144
 						}
 					}
 					SLO = {
@@ -21960,7 +21965,12 @@ country_event = { #Free Illyria
 					limit = {
 						OR = {
 							state = 102
+							state = 1101
+							state = 1103
+							state = 1104
 							state = 736
+							state = 1100
+							state = 1144
 						}
 					}
 					SLO = {
@@ -22208,7 +22218,12 @@ country_event = { #Russia denies
 					limit = {
 						OR = {
 							state = 102
+							state = 1101
+							state = 1103
+							state = 1104
 							state = 736
+							state = 1100
+							state = 1144
 						}
 					}
 					CRO = {
@@ -22251,7 +22266,12 @@ country_event = { #Russia denies
 					limit = {
 						OR = {
 							state = 102
+							state = 1101
+							state = 1103
+							state = 1104
 							state = 736
+							state = 1100
+							state = 1144
 						}
 					}
 					SLO = {
@@ -22294,7 +22314,12 @@ country_event = { #Russia denies
 					limit = {
 						OR = {
 							state = 102
+							state = 1101
+							state = 1103
+							state = 1104
 							state = 736
+							state = 1100
+							state = 1144
 						}
 					}
 					SLO = {
@@ -22894,14 +22919,17 @@ country_event = { #Russia denies
 					limit = {
 						OR = {
 							state = 102
+							state = 1101
+							state = 1103
+							state = 1104
 							state = 736
+							state = 1100
+							state = 1144
 						}
 					}
 					SER = {
-						transfer_state = 102
-						transfer_state = 736
-						add_state_core = 102
-						add_state_core = 736
+						transfer_state = PREV
+						add_state_core = PREV
 					}
 				}
 			}
@@ -25844,10 +25872,6 @@ country_event = { #TRM - Rejects referendum
 		add_ideas = RUS_Siberian_War_Buff
 		TRM = { add_ideas = TRM_Siberian_War_Debuff }
 		hidden_effect = {
-			news_event = {
-				id = russianews.7
-				days = 1
-			}
 			random_other_country = {
 				limit = {
 					NOT = { tag = TRM }
@@ -25936,10 +25960,6 @@ country_event = { #Crush Transamur
 			add_ideas = RUS_Siberian_War_Buff
 			TRM = { add_ideas = TRM_Siberian_War_Debuff }
 			hidden_effect = {
-			news_event = {
-				id = russianews.7
-				days = 1
-			}
 			random_other_country = {
 				limit = {
 					NOT = { tag = TRM }
@@ -31054,7 +31074,7 @@ news_event = { #Civil War
 	immediate = { log = "[GetDateText]: [Root.GetName]: event russianews.7" }
 	title = russianews.7.t
 	desc = russianews.7.d
-	picture = GFX_news_event_second_russian_civil_war
+	picture = GFX_news_event_RUS_second_russian_civil_war
 
 	major = yes
 
