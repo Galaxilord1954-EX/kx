@@ -151,6 +151,10 @@ country_event = { # Economic policy
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_MAFIA
 					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
+					}
 				}
 			}
 		}
@@ -199,6 +203,10 @@ country_event = { # Economic policy
 					has_game_rule = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_MAFIA
+					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
 					}
 				}
 			}
@@ -258,6 +266,10 @@ country_event = { # Internal policy
 					has_game_rule = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_MAFIA
+					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
 					}
 				}
 			}
@@ -340,6 +352,10 @@ country_event = { # Internal policy
 					has_game_rule = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_MAFIA
+					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
 					}
 				}
 			}
@@ -500,6 +516,10 @@ country_event = { # Military policy
 					has_game_rule = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_MAFIA
+					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
 					}
 				}
 			}
@@ -4378,6 +4398,10 @@ country_event = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_MAFIA
 					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
+					}
 				}
 			}
 		}
@@ -4431,6 +4455,10 @@ country_event = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_MAFIA
 					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
+					}
 				}
 			}
 		}
@@ -4461,6 +4489,10 @@ country_event = {
 					rule = SRI_start_election
 					option = SRI_START_ELECTION_MAFIA
 				}
+				has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
+					}
 			}
 		}
 		add_political_power = 100
@@ -4488,6 +4520,10 @@ country_event = {
 					has_game_rule = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_MAFIA
+					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
 					}
 				}
 			}
@@ -4547,6 +4583,10 @@ country_event = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_FASCI
 					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_NEOSANFEDISTI
+					}
 				}
 			}
 		}
@@ -4603,6 +4643,10 @@ country_event = {
 					has_game_rule = {
 						rule = SRI_start_election
 						option = SRI_START_ELECTION_EVOLA
+					}
+					has_game_rule = {
+						rule = SRI_start_election
+						option = SRI_START_ELECTION_MAFIA
 					}
 					has_game_rule = {
 						rule = SRI_start_election
@@ -7060,6 +7104,7 @@ country_event = { # Spiritual Influence #1
 	picture = GFX_SIC_evola
 	
 	trigger = {
+	tag = SRI
 	OR = {
 		has_country_flag = {
 			flag = SIC_Occult
@@ -7100,6 +7145,7 @@ country_event = { # Spiritual Influence #2
 	picture = GFX_report_event_SRI_palace
 	
 	trigger = {
+		tag = SRI
 		OR = {
 		has_country_flag = {
 			flag = SIC_Occult
@@ -7143,6 +7189,7 @@ country_event = { # Spiritual Influence #3
 	picture = GFX_report_event_SRI_palace
 	
 	trigger = {
+		tag = SRI
 	OR = {
 			has_country_flag = {
 				flag = SIC_Occult
@@ -7186,6 +7233,7 @@ country_event = { # Spiritual Influence #4
 	picture = GFX_SIC_occultism
 	
 	trigger = {
+		tag = SRI
 	OR = {
 		AND = {
 		has_country_flag = {
@@ -7235,7 +7283,7 @@ country_event = { # Spiritual Influence #5
 	picture = GFX_SIC_occultism
 	
 	trigger = {
-	
+		tag = SRI
 		OR = {
 		has_country_flag = {
 			flag = SIC_Occult
@@ -7281,6 +7329,7 @@ country_event = { # Spiritual Influence #6
 	picture = GFX_SIC_occultism
 	
 	trigger = {
+		tag = SRI
 		has_country_flag = {
 			flag = SIC_Occult
 			value > 75 
@@ -7319,7 +7368,7 @@ country_event = { # Catholic Resistance Grows to Two
 	fire_only_once = yes
 	
 	trigger = {
-
+		tag = SRI
 		OR = {
 		has_country_flag = {
 			flag = SIC_catholic_opposition
@@ -7366,6 +7415,7 @@ country_event = { # Massive Catholic Resistance
 	fire_only_once = yes
 	
 	trigger = {
+		tag = SRI
 		OR = {
 		has_country_flag = {
 			flag = SIC_catholic_opposition
@@ -7417,6 +7467,7 @@ country_event = { # Catholic Resistance Falls from Three
 	fire_only_once = yes
 	
 	trigger = {
+		tag = SRI
 		has_country_flag = {
 			flag = SIC_catholic_opposition
 			value < 15
@@ -7473,6 +7524,7 @@ country_event = { # Catholics Submit
 	fire_only_once = yes
 	
 	trigger = {
+			tag = SRI
 			has_country_flag = {
 			flag = SIC_catholic_opposition
 			value < 5
@@ -8193,7 +8245,6 @@ country_event = { #future of italy
 			ruling_party = paternal_autocrat
 			elections_allowed = no
 		}
-		set_cosmetic_tag = SRI_ziggi
         set_country_flag = SRI_ziggi_gang
 		set_party_name = {
 			ideology = paternal_autocrat
@@ -8382,7 +8433,7 @@ country_event = { #approching the north
 	is_triggered_only = yes
 
 	option = { #borning path is complete
-		name = cathitaly.9.a
+		name = cathitaly.90.a
 		ITA = { country_event = cathitaly.10 }
 
 	}
@@ -8399,7 +8450,7 @@ country_event = { #neoseds want to unify
 	option = { #yes
 		name = cathitaly.10.a
 		ai_chance = {
-			factor = 100000000
+			factor = 75
 		}
 		SRI = { country_event = cathitaly.11 }
 
@@ -8407,7 +8458,7 @@ country_event = { #neoseds want to unify
 	option = { #no
 		name = cathitaly.10.b
 		ai_chance = {
-			factor = 0
+			factor = 25
 		}
 		SRI = { country_event = cathitaly.12 }
 
@@ -8462,6 +8513,7 @@ country_event = { #Holy Italy
 
 	option = { #flavor is based
 		name = cathitaly.13.a
+		set_cosmetic_tag = SRI_ziggi
         add_war_support = 0.2
 		add_political_power = 150
 		add_stability = 0.5
@@ -8530,14 +8582,15 @@ country_event = { #padre pio is the pope now
 
 	option = { #pio demands north submit
 		name = cathitaly.17.a
+		hidden_effect = {
 		random_other_country = {
 				news_event = {
-					id = worldnews.550
+					id = worldnews.556
 					days = 1
 				}
 			}
 		ITA = { country_event = cathitaly.19 }
-
+		}
 	}
 }
 country_event = { #padre pio is pope but the north
@@ -8574,7 +8627,7 @@ country_event = { #pio demands north submit
 	option = { #yes
 		name = cathitaly.19.a
 		ai_chance = {
-			factor = 100000000
+			factor = 50
 		}
 		SRI = { country_event = cathitaly.20 }
 
@@ -8583,10 +8636,10 @@ country_event = { #pio demands north submit
 		name = cathitaly.19.b
 		country_event = {
 				id = cathitaly.22
-				days = 5
+				days = 2
 			}
 		ai_chance = {
-			factor = 0
+			factor = 50
 		}
 		SRI = { country_event = cathitaly.21 }
 
@@ -8619,6 +8672,7 @@ country_event = { #ITA says nah fam
 	option = {#damn
 	name = cathitaly.21.a
 	add_political_power = -20
+	set_country_flag = SRI_pio_war
 	}
 }
 country_event = { #new government
@@ -8659,12 +8713,13 @@ country_event = { #Pio papal name
 	option = { #leo
 		name = cathitaly.23.a
 		add_political_power = 40
+		set_capital = 2
 		add_popularity = {
 			ideology = national_populist
 			popularity = 0.2
 		}
 		create_country_leader = {
-			name = "Pope Leo XIV"
+			name = "Leo XIV"
 			desc = "POLITICS_PIO_LEO_DESC"
 			picture = "gfx/leaders/SRI/papalpio.dds"
 			expire = "1965.1.1"
@@ -8683,16 +8738,25 @@ country_event = { #Pio papal name
 			long_name = SRI_pio_pope_party_long
 			name = SRI_pio_pope_party
 		}
+		hidden_effect = {
+		random_other_country = {
+				news_event = {
+					id = worldnews.550
+					days = 1
+				}
+			}
+		}
 	}
 	option = { #Paul
 		name = cathitaly.23.b
 		add_political_power = 40
+		set_capital = 2
 		add_popularity = {
 			ideology = national_populist
 			popularity = 0.2
 		}
 		create_country_leader = {
-			name = "Pope Paul VI"
+			name = "Paul VI"
 			desc = "POLITICS_PIO_PAUL_DESC"
 			picture = "gfx/leaders/SRI/papalpio.dds"
 			expire = "1965.1.1"
@@ -8704,23 +8768,32 @@ country_event = { #Pio papal name
 			elections_allowed = no
 		}
 		set_cosmetic_tag = SRI_pio_pope
-                set_country_flag = SRI_paul
+        set_country_flag = SRI_paul
 		set_country_flag = SRI_pope_pio
 		set_party_name = {
 			ideology = national_populist
 			long_name = SRI_pio_pope_party_long
 			name = SRI_pio_pope_party
 		}
+		hidden_effect = {
+		random_other_country = {
+				news_event = {
+					id = worldnews.550
+					days = 1
+				}
+			}
+		}
 	}
 	option = { #Gregory
 		name = cathitaly.23.c
 		add_political_power = 40
+		set_capital = 2
 		add_popularity = {
 			ideology = national_populist
 			popularity = 0.2
 		}
 		create_country_leader = {
-			name = "Pope Gregory XVII"
+			name = "Gregory XVII"
 			desc = "POLITICS_PIO_GREG_DESC"
 			picture = "gfx/leaders/SRI/papalpio.dds"
 			expire = "1965.1.1"
@@ -8738,6 +8811,14 @@ country_event = { #Pio papal name
 			ideology = national_populist
 			long_name = SRI_pio_pope_party
 			name = SRI_pio_pope_party
+		}
+		hidden_effect = {
+		random_other_country = {
+				news_event = {
+					id = worldnews.550
+					days = 1
+				}
+			}
 		}
 	}		
 }
@@ -8787,13 +8868,14 @@ country_event = { #opening of the Second Vatican Council
 	option = { #vatican two gang
 		name = cathitaly.26.a
 		add_ideas = SRI_vatican_two_open
+		hidden_effect = {
 		random_other_country = {
 				news_event = {
 					id = worldnews.551
 					days = 1
 				}
 			}
-
+		}
 	}
 
 }
@@ -8812,13 +8894,14 @@ country_event = { #trad vatican two for reasons
 				remove_idea = SRI_vatican_two_open
 				add_idea = SRI_vatican_two_trad1
 			}
+		hidden_effect = {
 		random_other_country = {
 				news_event = {
 					id = worldnews.552
 					days = 1
 				}
 			}
-
+		}
 	}
 
 }
@@ -8837,13 +8920,14 @@ country_event = { #moderate vatican two for reasons
 				remove_idea = SRI_vatican_two_open
 				add_idea = SRI_vatican_two_mod1
 			}
+		hidden_effect = {
 		random_other_country = {
 				news_event = {
 					id = worldnews.553
 					days = 1
 				}
 			}
-
+		}
 	}
 
 }
@@ -8862,13 +8946,14 @@ country_event = { #refromist vatican two for reasons
 				remove_idea = SRI_vatican_two_open
 				add_idea = SRI_vatican_two_reform1
 			}
+		hidden_effect = {
 		random_other_country = {
 				news_event = {
 					id = worldnews.554
 					days = 1
 				}
 			}
-
+		}
 	}
 
 }
@@ -8884,6 +8969,11 @@ country_event = { #decree on freemasonary
 	option = { #oh based flavor
 		name = cathitaly.30.a
 		add_political_power = 25
+
+	}
+	option = { #oh based flavor
+		name = cathitaly.30.b
+		add_political_power = -25
 
 	}
 
@@ -8902,6 +8992,11 @@ country_event = { #decree on capitalism
 		add_political_power = 25
 
 	}
+	option = { #oh based flavor
+		name = cathitaly.31.b
+		add_political_power = -25
+
+	}
 
 }
 country_event = { #vatican two is over
@@ -8916,13 +9011,14 @@ country_event = { #vatican two is over
 	option = { #vatican two gang
 		name = cathitaly.32.a
 		add_political_power = 250
+		hidden_effect = {
 		random_other_country = {
 				news_event = {
 					id = worldnews.555
 					days = 1
 				}
 			}
-
+		}
 	}
 
 }
@@ -8939,6 +9035,12 @@ country_event = { #into the world
 		name = cathitaly.33.a
 		add_ideas = SRI_intro_da_world
 		every_state = { add_claim_by = SRI }
+
+
+	}
+	option = { #no. We shall wait and just be pope
+		name = cathitaly.33.b
+
 
 
 	}
@@ -9054,6 +9156,7 @@ country_event = { #The Mafia united Italy
 	trigger = {
 		tag = SRI
 		has_government = paternal_autocrat
+		has_country_flag = SRI_mafia_in_charge
 		NOT = {
 			country_exists = ITA
 		}
@@ -9183,6 +9286,7 @@ country_event = { #Entente
 		country_exists = NFA
 		tag = SRI
 		has_government = paternal_autocrat
+		has_country_flag = SRI_mafia_in_charge
 		date > 1938.8.4
 	}
 

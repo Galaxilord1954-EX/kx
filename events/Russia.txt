@@ -14084,7 +14084,7 @@ country_event = { #1st Women's Division of Death
 				}
 			}
 			RUS_increase_wrangel = yes
-			custom_effect_tooltip = RUS_wrangel_increaseddddddd
+			custom_effect_tooltip = RUS_wrangel_increase
 		}
 	}
 }
@@ -29620,6 +29620,25 @@ country_event = { #vladivostok captured
 		} 
 	}
 }
+country_event = { #Hidden failsafe event if TRM peaces out before Vladivostok is captured
+	id = rusfor.14220
+	title = rusfor.1422.t
+	desc = rusfor.1422.d
+	fire_only_once = yes
+	hidden = yes
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		has_idea = RUS_Siberian_War_Buff
+		TRM = { exists = no }
+	}
+	option = {
+		remove_ideas = RUS_Siberian_War_Buff
+	} 
+}
+
 country_event = { #Alaska
 	id = rusfor.1423
 	title = rusfor.1423.t
@@ -29633,9 +29652,7 @@ country_event = { #Alaska
 			factor = 40
 		}
 		trigger = {
-			NOT = {
-				ALA = { exists = yes }
-			}
+			ALA = { exists = no }
 		}
 		463 = {
 			owner = {
@@ -29653,9 +29670,7 @@ country_event = { #Alaska
 		}
 		trigger = {
 			has_completed_focus = RUS_Expansionism
-			NOT = {
-				ALA = { exists = yes }
-			}
+			ALA = { exists = no }
 		}
 		463 = {
 			owner = {
@@ -31079,6 +31094,7 @@ news_event = { #Civil War
 	major = yes
 
 	is_triggered_only = yes
+	fire_only_once = yes
 
 	trigger = {
 		wants_world_news = yes
