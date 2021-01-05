@@ -9,6 +9,10 @@ ideas = {
 				ai_call_ally_desire_factor = -1000
 				ai_join_ally_desire_factor = -1000
 			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
 			picture = GER_colonial_government
 		}
 		MAF_profiteering = {
@@ -221,48 +225,6 @@ ideas = {
 			}
 			picture = generic_democratic_drift_bonus
 		}
-		MAF_Black_Pilots = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAF_Black_Pilots"}
-			equipment_bonus = {
-				fighter_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				cv_fighter_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				CAS_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				cv_CAS_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				cv_nav_bomber_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				nav_bomber_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				tac_bomber_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				heavy_fighter_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-				strat_bomber_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-			}
-			picture = MAF_Black_hat
-		}
 		MAF_Mercenary_Pilots = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAF_Mercenary_Pilots"}
 			modifier = {
@@ -462,6 +424,17 @@ ideas = {
                 political_power_gain = -0.15
 			}
 			picture = MAF_Bel_Influence
+		}
+		MAF_post_collapse_army = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAF_post_collapse_army"}
+			modifier = {
+				military_factory_donations = 1
+				acclimatization_hot_climate_gain_factor = 1
+				attrition = -0.30
+				army_speed_factor = 0.15
+				defence = -0.30
+			}
+			picture = GER_colonial_government
 		}
         MAF_French_Settlers = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAF_French_Settlers"}

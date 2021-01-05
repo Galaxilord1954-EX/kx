@@ -2116,7 +2116,6 @@ USA_reconstruction_decisions = {# Reconstruction Stuff
 			376 = { is_owned_and_controlled_by = ROOT }
 			382 = { is_owned_and_controlled_by = ROOT }
 			1150 = { is_owned_and_controlled_by = ROOT }
-			1154 = { is_owned_and_controlled_by = ROOT }
 			1157 = { is_owned_and_controlled_by = ROOT }
 			1161 = { is_owned_and_controlled_by = ROOT }
 			1165 = { is_owned_and_controlled_by = ROOT }
@@ -2149,7 +2148,6 @@ USA_reconstruction_decisions = {# Reconstruction Stuff
 					376 = { is_core_of = ROOT }
 					382 = { is_core_of = ROOT }
 					1150 = { is_core_of = ROOT }
-					1154 = { is_core_of = ROOT }
 					1157 = { is_core_of = ROOT }
 					1161 = { is_core_of = ROOT }
 					1165 = { is_core_of = ROOT }
@@ -2179,7 +2177,6 @@ USA_reconstruction_decisions = {# Reconstruction Stuff
 						state = 376
 						state = 382
 						state = 1150
-						state = 1154
 						state = 1157
 						state = 1161
 						state = 1155
@@ -2959,6 +2956,7 @@ USA_rainbow_war_plans_decisions = {
 			OR = {
 				tag = USA
 				tag = CAL
+				tag = WCC
 			}
 		}
 		available = {
@@ -2977,6 +2975,7 @@ USA_rainbow_war_plans_decisions = {
 			OR = {
 				has_completed_focus = USA_enter_the_fray
 				has_completed_focus = CAL_enter_the_fray
+				has_completed_focus = WCC_enter_the_fray
 			}
 			country_exists = CAN
 			has_socialist_government = no
@@ -3238,6 +3237,7 @@ USA_rainbow_war_plans_decisions = {
 				tag = USA
 				tag = CAL
 				tag = TEX
+				tag = WCC
 			}
 		}
 		available = {
@@ -3264,6 +3264,7 @@ USA_rainbow_war_plans_decisions = {
 			OR = {
 				has_completed_focus = USA_enter_the_fray
 				has_completed_focus = CAL_enter_the_fray
+				has_completed_focus = WCC_enter_the_fray
 			}
 			country_exists = JAP
 			JAP = {
@@ -3313,6 +3314,7 @@ USA_rainbow_war_plans_decisions = {
 				tag = USA
 				tag = CAL
 				tag = TEX
+				tag = WCC
 			}
 		}
 		available = {
@@ -3349,6 +3351,7 @@ USA_rainbow_war_plans_decisions = {
 			OR = {
 				has_completed_focus = USA_enter_the_fray
 				has_completed_focus = CAL_enter_the_fray
+				has_completed_focus = WCC_enter_the_fray
 			}
 			has_socialist_government = no
 			country_exists = FRA
@@ -3430,6 +3433,7 @@ USA_rainbow_war_plans_decisions = {
 			OR = {
 				has_completed_focus = USA_enter_the_fray
 				has_completed_focus = CAL_enter_the_fray
+				has_completed_focus = WCC_enter_the_fray
 			}
 			country_exists = GER
 			GER = {
@@ -3475,6 +3479,7 @@ USA_rainbow_war_plans_decisions = {
 				tag = USA
 				tag = CAL
 				tag = TEX
+				tag = WCC
 			}
 		}
 		available = {
@@ -3498,6 +3503,7 @@ USA_rainbow_war_plans_decisions = {
 			OR = {
 				has_completed_focus = USA_enter_the_fray
 				has_completed_focus = CAL_enter_the_fray
+				has_completed_focus = WCC_enter_the_fray
 			}
 			country_exists = SOV
 			SOV = {
@@ -3547,6 +3553,7 @@ USA_rainbow_war_plans_decisions = {
 				tag = USA
 				tag = CAL
 				tag = TEX
+				tag = WCC
 			}
 		}
 		available = {
@@ -3570,6 +3577,7 @@ USA_rainbow_war_plans_decisions = {
 			OR = {
 				has_completed_focus = USA_enter_the_fray
 				has_completed_focus = CAL_enter_the_fray
+				has_completed_focus = WCC_enter_the_fray
 			}
 			country_exists = RUS
 			RUS = {
@@ -3620,6 +3628,7 @@ USA_rainbow_war_plans_decisions = {
 				tag = USA
 				tag = CAL
 				tag = TEX
+				tag = WCC
 			}
 		}
 

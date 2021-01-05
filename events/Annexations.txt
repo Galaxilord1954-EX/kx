@@ -7158,6 +7158,7 @@ country_event = { #The fate of Georgia
 		}
 		add_political_power = -25
 		add_to_array = { integration_core_array = GEO }
+		set_country_flag = GEO_CONQ
 		recheck_annexations = yes
 	}
 
@@ -8493,6 +8494,7 @@ country_event = { #The fate of Turkestan
 		}
 		add_political_power = -40
 		add_to_array = { integration_core_array = TRK }
+		set_country_flag = TRK_CONQ
 		recheck_annexations = yes
 	}
 
@@ -8691,6 +8693,7 @@ country_event = { #The fate of Central Asia
 		add_political_power = -80
 		add_to_array = { integration_core_array = ALO }
 		add_to_array = { integration_core_array = TRK }
+		set_country_flag = CA_CONQ
 		recheck_annexations = yes
 	}
 
@@ -8962,6 +8965,7 @@ country_event = { #The fate of Kazakhstan
 		}
 		add_political_power = -40
 		add_to_array = { integration_core_array = ALO }
+		set_country_flag = ALO_CONQ
 		recheck_annexations = yes
 	}
 
@@ -9956,6 +9960,7 @@ country_event = { #The Annexation of Armenia
 		}
 		add_political_power = -20
 		add_to_array = { integration_core_array = ARM }
+		set_country_flag = ARM_CONQ
 		recheck_annexations = yes
 	}
 
@@ -10062,6 +10067,7 @@ country_event = { #The Annexation of Azerbaijan
 		}
 		add_political_power = -20
 		add_to_array = { integration_core_array = AZE }
+		set_country_flag = AZE_CONQ
 		recheck_annexations = yes
 	}
 
@@ -13193,6 +13199,7 @@ country_event = { #Fate of Belarus
 		}
 		add_political_power = -50
 		add_to_array = { integration_core_array = WHR }
+		set_country_flag = WHR_CONQ
 		recheck_annexations = yes
 	}
 
@@ -14076,6 +14083,18 @@ country_event = { #Liberation of Montenegro
 			}
 			CRO = { transfer_state = PREV }
 		}
+		1097 = {
+			if = {
+				limit = {
+					NOT = {
+						is_claimed_by = SER
+						is_core_of = SER
+					}
+				}
+				add_claim_by = SER
+			}
+			SER = { transfer_state = PREV }
+		}
 	}
 	option = { #Give it to Serbia
 		name = annex.150.d
@@ -14093,6 +14112,18 @@ country_event = { #Liberation of Montenegro
 			}
 		}
 		105 = {
+			if = {
+				limit = {
+					NOT = {
+						is_claimed_by = SER
+						is_core_of = SER
+					}
+				}
+				add_claim_by = SER
+			}
+			SER = { transfer_state = PREV }
+		}
+		1097 = {
 			if = {
 				limit = {
 					NOT = {
@@ -14128,6 +14159,18 @@ country_event = { #Liberation of Montenegro
 				limit = { NOT = { is_core_of = ROOT } }
 				add_core_of = ROOT
 			}
+		}
+		1097 = {
+			if = {
+				limit = {
+					NOT = {
+						is_claimed_by = SER
+						is_core_of = SER
+					}
+				}
+				add_claim_by = SER
+			}
+			SER = { transfer_state = PREV }
 		}
 	}
 	option = { #occupy
@@ -16655,6 +16698,7 @@ country_event = { #Fate of Don Kuban Union
 		}
 		add_political_power = -50
 		add_to_array = { integration_core_array = DKB }
+		set_country_flag = DKB_CONQ
 		recheck_annexations = yes
 	}
 
@@ -18060,6 +18104,7 @@ country_event = { #Fate of Mongolia
 		}
 		add_political_power = -25
 		add_to_array = { integration_core_array = MON }
+		set_country_flag = MON_CONQ
 	}
 	
 	option = { #Release Greater Mongolia
@@ -18823,6 +18868,7 @@ country_event = { #Fate of Manchuria
 			add_claim_by = ROOT
 		}
 		add_political_power = -25
+		set_country_flag = MAN_CONQ
 	}
 	option = { #occupy
 		name = annex.occupation
@@ -18925,6 +18971,7 @@ country_event = { #Fate of Xinjiang
 			add_claim_by = ROOT
 		}
 		add_political_power = -25
+		set_country_flag = SIK_CONQ
 	}
 	option = { #occupy
 		name = annex.occupation
@@ -20537,11 +20584,32 @@ country_event = { #Annexation of Nigeria
 	option = { #liberate
 		name = annex.205.a
 		ai_chance = {
-			factor = 100
+			factor = 80
 		}
-
 		set_temp_variable = { tag_to_release = NGR }
 		release_targeted_tag = yes
+	}
+
+	option = { #Give to Mittelafrika
+		name = annex.209.c
+		trigger = {
+			is_ally_with = MAF
+			MAF = { exists = yes }
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = NGR
+				is_claim_or_core_of_ROOT = no
+			}
+			MAF = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
 	}
 
 	option = { #occupy
@@ -20566,14 +20634,47 @@ country_event = { #Annexation of Dahomey
 	option = { #liberate
 		name = annex.206.a
 		ai_chance = {
-			factor = 100
+			factor = 80
 		}
-
+		hidden_effect = {
+			DAH = { add_state_core = 876 }
+			DAH = { transfer_state = 876 }
+		}
 		set_temp_variable = { tag_to_release = DAH }
 		release_targeted_tag = yes
 
 		country_event = dah.9
 		save_global_event_target_as = DAH_Overlord
+	}
+
+	option = { #Give to Westafrika
+		name = annex.209.b
+		trigger = {
+			CIV = {
+				exists = yes
+				is_ally_of_ROOT = yes
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		CIV = { transfer_state = 876 }
+	}
+
+	option = { #Give to Mittelafrika
+		name = annex.209.c
+		trigger = {
+			is_ally_with = MAF
+			CIV = { exists = no }
+			MAF = { exists = yes }
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		MAF = { add_state_core = 876 }
+		MAF = { transfer_state = 876 }
 	}
 
 	option = { #occupy
@@ -20595,16 +20696,62 @@ country_event = { #Annexation of Togo
 	desc = annexation_TOG_CONQ_desc
 	is_triggered_only = yes
 
-	option = { #liberate
+	option = { #liberate Togo
 		name = annex.207.a
 		ai_chance = {
-			factor = 100
+			factor = 80
 		}
-
+		hidden_effect = {
+			TOG = { add_state_core = 877 }
+			TOG = { transfer_state = 877 }
+		}
 		set_temp_variable = { tag_to_release = TOG }
 		release_targeted_tag = yes
 	}
+	
+	option = { #Give to Westafrika
+		name = annex.209.b
+		trigger = {
+			CIV = {
+				exists = yes
+				is_ally_of_ROOT = yes
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		CIV = { transfer_state = 877 }
+	}
 
+	option = { #Give to Mittelafrika
+		name = annex.209.c
+		trigger = {
+			is_ally_with = MAF
+			CIV = { exists = no }
+			MAF = { exists = yes }
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		MAF = { add_state_core = 877 }
+		MAF = { transfer_state = 877 }
+	}
+
+	option = { #Give to Liberia
+		name = annex.209.e
+		trigger = {
+			is_ally_with = LIB
+			LIB = { has_completed_focus = LIB_star_of_africa }
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		LIB = { transfer_state = 877 }
+	}
+	
 	option = { #occupy
 		name = annex.occupation
 		ai_chance = {
@@ -20624,16 +20771,63 @@ country_event = { #Annexation of Ghana
 	desc = annexation_GHA_CONQ_desc
 	is_triggered_only = yes
 
-	option = { #liberate
+	option = { #liberate a Ghanaian state
 		name = annex.208.a
 		ai_chance = {
-			factor = 100
+			factor = 80
 		}
-
+		hidden_effect = {
+			GHA = { add_state_core = 274 }
+			GHA = { transfer_state = 274 }
+		}
 		set_temp_variable = { tag_to_release = GHA }
 		release_targeted_tag = yes
 	}
-
+	
+	option = { #Give to Westafrika
+		name = annex.209.b
+		trigger = {
+			CIV = {
+				exists = yes
+				is_ally_of_ROOT = yes
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		CIV = { add_state_core = 274 }
+		CIV = { transfer_state = 274 }
+	}
+	
+	option = { #Give to Mittelafrika
+		name = annex.209.c
+		trigger = {
+			is_ally_with = MAF
+			CIV = { exists = no }
+			MAF = { exists = yes }
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		MAF = { add_state_core = 274 }
+		MAF = { transfer_state = 274 }
+	}
+	
+	option = { #Give to Liberia
+		name = annex.209.e
+		trigger = {
+			is_ally_with = LIB
+			LIB = { has_completed_focus = LIB_star_of_africa }
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		LIB = { transfer_state = 274 }
+	}
+	
 	option = { #occupy
 		name = annex.occupation
 		ai_chance = {
@@ -20653,14 +20847,69 @@ country_event = { #Annexation of Ivory Coast
 	desc = annexation_IVO_CONQ_desc
 	is_triggered_only = yes
 
-	option = { #liberate
+	option = { #liberate an Ivorian state
 		name = annex.209.a
 		ai_chance = {
-			factor = 100
+			factor = 80
 		}
-
+		hidden_effect = {
+			IVO = { add_state_core = 807 }
+			IVO = { add_state_core = 963 }
+			IVO = { transfer_state = 807 }
+			IVO = { transfer_state = 963 }
+		}
 		set_temp_variable = { tag_to_release = IVO }
 		release_targeted_tag = yes
+	}
+		
+	option = { #Give to Westafrika
+		name = annex.209.b
+		trigger = {
+			CIV = {
+				exists = yes
+				is_ally_of_ROOT = yes
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		CIV = { transfer_state = 807 }
+		CIV = { transfer_state = 963 }
+
+		set_temp_variable = { tag_to_release = CIV }
+		release_targeted_tag = yes
+	}
+
+	option = { #Give to Mittelafrika
+		name = annex.209.c
+		trigger = {
+			is_ally_with = MAF
+			CIV = { exists = no }
+			MAF = { exists = yes }
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		MAF = { add_state_core = 807 }
+		MAF = { add_state_core = 963 }
+		MAF = { transfer_state = 807 }
+		MAF = { transfer_state = 963 }
+	}
+
+	option = { #Give to Liberia
+		name = annex.209.e
+		trigger = {
+			is_ally_with = LIB
+			LIB = { has_completed_focus = LIB_star_of_africa }
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+		LIB = { transfer_state = 807 }
+		LIB = { transfer_state = 963 }
 	}
 
 	option = { #occupy

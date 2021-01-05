@@ -228,7 +228,7 @@ country_event = { #Everything is Fucked thanks to Maurice
 				}
 				set_politics = {
 					ruling_party = authoritarian_democrat
-					last_election = "1888.15.6"
+					last_election = "1888.6.15"
 					election_frequency = 48
 					elections_allowed = no
 				}
@@ -837,7 +837,7 @@ country_event = { #Heydrich Ad
 
 	trigger = {
 		tag = GER
-		date > 1939.3.5
+		date > 1936.2.14
 	}
 	
 	option = { 

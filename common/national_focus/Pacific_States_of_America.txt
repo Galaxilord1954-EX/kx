@@ -1144,7 +1144,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CAL_90_division_Army"
 			if = {
-				limit = { has_idea = CAL_Marshall_plan_idea_1 }
+				limit = { has_idea = CAL_Marshall_plan_idea_4 }
 				swap_ideas = {
 					remove_idea = CAL_Marshall_plan_idea_4
 					add_idea = CAL_Marshall_plan_idea_4_left
@@ -1184,7 +1184,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CAL_morale_emphasis"
 			if = {
-				limit = { has_idea = CAL_Marshall_plan_idea_1 }
+				limit = { has_idea = CAL_Marshall_plan_idea_4 }
 				swap_ideas = {
 					remove_idea = CAL_Marshall_plan_idea_4
 					add_idea = CAL_Marshall_plan_idea_4_left
@@ -3746,6 +3746,9 @@ focus_tree = {
 		available = {
 			NOT = {
 			has_country_leader = { ruling_only = yes name = "William Randolph Hearst" } 
+			}
+			NOT = {
+			has_country_leader = { ruling_only = yes name = "Walt Disney" }
 			}
 		}
 		ai_will_do = {
@@ -9598,6 +9601,7 @@ focus_tree = {
 					}
 				}
 			}
+			NOT = { has_country_flag = CAL_Norton_PSA }
 		}
 		ai_will_do = {
 			factor = 5
@@ -13857,8 +13861,11 @@ focus_tree = {
 		available = {
 			is_subject = no
 			has_war = yes
-			any_enemy_country = {
-				is_in_north_america = no
+			custom_trigger_tooltip = {
+				tooltip = is_not_in_north_america_tt
+				any_enemy_country = {
+					is_in_north_america = no
+				}
 			}
 		}
 		relative_position_id = CAL_new_interventionism
@@ -13951,6 +13958,7 @@ focus_tree = {
 			army_experience = 10
 			navy_experience = 10
 			air_experience = 10
+			unlock_decision_category_tooltip = USA_rainbow_war_plans_decisions
 		}
 	}
 
@@ -14001,8 +14009,11 @@ focus_tree = {
 		available = {
 			is_subject = no
 			has_war = yes
-			any_enemy_country = {
-				is_in_north_america = no
+			custom_trigger_tooltip = {
+				tooltip = is_not_in_north_america_tt
+				any_enemy_country = {
+					is_in_north_america = no
+				}
 			}
 		}
 		relative_position_id = CAL_enter_the_fray
@@ -14427,7 +14438,6 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CAL_enter_the_fray"
 			add_political_power = 100
-			unlock_decision_category_tooltip = CAL_rainbow_war_plans_decisions
 		}
 	}
 	
@@ -17138,6 +17148,7 @@ focus_tree = {
 					long_name = "Royalist Party"
 					name = "Royalist Party"
 				}
+				set_country_flag = CAL_Norton_PSA
 			}
 		}
 	}
@@ -17370,8 +17381,21 @@ focus_tree = {
 				CAL = { declare_war_on = { target = CSA type = annex_everything	} }
 				CAL = { declare_war_on = { target = TEX type = annex_everything	} }
 				CAL = { declare_war_on = { target = USA type = annex_everything	} }
-				CAL = { declare_war_on = { target = WCC type = annex_everything	} }
 				CAL = { declare_war_on = { target = COR type = annex_everything	} }
+			}
+			if = {
+				limit = { 
+					WCC = { is_subject = no }
+				}
+				CAL = { declare_war_on = { target = WCC type = annex_everything	} }
+			}
+			every_state = {
+				limit = {
+					is_core_of = USA
+					NOT = { is_core_of = CAL }
+					NOT = { is_claimed_by = CAL }
+				}
+				add_claim_by = CAL
 			}
 		}
 	}

@@ -1424,6 +1424,7 @@ can_release_portugal = {
 		NOT = {
 			has_country_flag = POR_CONQ
 			is_ally_with = POR
+			country_exists = POR
 		}
 	}
 }
@@ -1860,7 +1861,7 @@ can_release_thessaloniki = {
 
 #Tuscany - annexation_TUS_CONQ
 can_release_tuscany = {
-	state = 142 #Tuscany
+	state = 162 #Tuscany
 	NOT = { is_claimed_by = ROOT }
 	ROOT = {
 		can_form_italy = no

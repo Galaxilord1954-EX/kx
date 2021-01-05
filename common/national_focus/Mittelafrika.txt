@@ -13,6 +13,7 @@ focus_tree = {
 	}
 	
 	shared_focus = MAF_Military_Reforms
+	shared_focus = MAF_blackmondayadjustment
 	
 	focus = {
 		id = MAF_Sovereign_State
@@ -284,8 +285,18 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_equals_with_the_kaiser"
-			GER = {
-				end_puppet = MAF
+			effect_tooltip = {
+				GER = {
+					end_puppet = MAF
+				}
+			}
+			hidden_effect = {
+				MAF = {
+					set_rule = {
+						can_decline_call_to_war = yes
+						can_not_declare_war = no
+					}
+				}
 			}
 		}
 	}
@@ -313,6 +324,10 @@ focus_tree = {
 					rule = MAF_collapse
 					option = MAF_COLLAPSE_GUARANTEED
 				}
+			}
+			modifier = {
+				factor = 0.1
+				has_war = yes
 			}
 		}
 		cost = 5
@@ -620,10 +635,10 @@ focus_tree = {
 			add_state_core = 970
 			add_state_core = 969
 			KEN = {
-				remove_idea = GBR_Colonial_Government
+				remove_ideas = GBR_Colonial_Government
 			}
 			NGR = {
-				remove_idea = GBR_Colonial_Government
+				remove_ideas = GBR_Colonial_Government
 			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY }
@@ -792,14 +807,11 @@ focus_tree = {
 			custom_effect_tooltip = MAF_Autonomy
 			add_stability = -0.15
 			hidden_effect = {
-				get_current_government_type = yes
-				GER = {
-					set_autonomy = {
-						target = MAF
-						autonomy_state = kr_nominal_puppet
+				MAF = {
+					set_rule = {
+						can_decline_call_to_war = yes
 					}
 				}
-				restore_previous_government_type = yes
 			}
 		}
 		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_STABILITY }
@@ -816,7 +828,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_breakbreadwiththeduke }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			CIV = {
@@ -853,7 +865,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_imdunkelherzwestafrikas }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			CIV = {
@@ -889,7 +901,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theschutzgebietebeckon }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_deal_with_kenya_uganda
@@ -906,7 +918,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theschutzgebietebeckon }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_deal_with_congo
@@ -923,7 +935,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theschutzgebietebeckon }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_deal_with_madagaskar
@@ -940,7 +952,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theschutzgebietebeckon }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_deal_with_nordafrika
@@ -957,7 +969,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theschutzgebietebeckon }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_deal_with_ostafrika
@@ -974,7 +986,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_implementacoffeetax }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			CIV = {
@@ -996,7 +1008,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theschutzgebietebeckon }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_deal_with_nordrhodesia
@@ -1012,9 +1024,8 @@ focus_tree = {
 		cost = 2.90
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_committeeforgermansettlement }
-		mutually_exclusive = { focus = MAF_committeeforgermansettlement }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KEN = {
@@ -1037,7 +1048,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_divestournativeeducation }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KEN = {
@@ -1058,7 +1069,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_supportfreestatecollaborationists }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KEN = {
@@ -1085,7 +1096,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_ostafrikanischerkaiserfabrikkomplex }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KEN = {
@@ -1117,7 +1128,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_mzizimahausdesfriedens }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_improve_navy_in_ostafrika
@@ -1142,7 +1153,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_goeringshafen }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_improve_air_in_ostafrika
@@ -1166,7 +1177,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_thebase }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_improve_infra_in_ostafrika
@@ -1206,6 +1217,9 @@ focus_tree = {
 			    has_idea = MAF_Debt 
 			}
 		}
+		ai_will_do = {
+			factor = 100
+		}
 		x = 17
 		y = 2
 		cost = 4.40
@@ -1216,9 +1230,6 @@ focus_tree = {
             country_event = { 
 			    id = mafNKR.1  
 			}
-		}
-		ai_will_do = {
-			factor = 1
 		}
 	}
 
@@ -1232,7 +1243,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theschutzgebietebeckon }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_deal_with_westafrika
@@ -1254,7 +1265,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_rhodesiersterbennie }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			ZAM = {
@@ -1279,7 +1290,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_germanlawinnordrhodesien }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			ZAM = {
@@ -1305,7 +1316,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_afewgoodmen }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			ZAM = {
@@ -1337,7 +1348,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_usethehouseholds }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			ZAM = {
@@ -1363,7 +1374,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_urlaubinkamerun }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			army_experience = 100
@@ -1382,7 +1393,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_supplementtheschutztruppen }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			army_experience = 100
@@ -1408,7 +1419,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_mercenaryauxillaries }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			952 = {
@@ -1441,7 +1452,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_neueafrikaschiffe }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			952 = {
@@ -1467,7 +1478,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_nordafrikanischerpolizeitruppen }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			add_stability = 0.04
@@ -1486,7 +1497,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_wirlagenvormadagaskar }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			MAG = {
@@ -1513,7 +1524,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_assistheydrichwiththenavy }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			MAG = {
@@ -1534,7 +1545,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theantifrenchpact }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			MAG = {
@@ -1555,7 +1566,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_aplotagainsttherebels }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			MAG = {
@@ -1577,7 +1588,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_afrikaschlosse }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_improve_navy_in_ostafrika2
@@ -1608,7 +1619,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_bingobangobongo }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KTG = {
@@ -1630,7 +1641,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_regionalburofrarbeitskrfte }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KTG = {
@@ -1652,6 +1663,9 @@ focus_tree = {
 		y = 1
 		cost = 4.40
 		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 100
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_New_Administration"
             country_event = { 
@@ -1692,6 +1706,9 @@ focus_tree = {
 				    include_locked = yes
 			    }
 		    }
+		}
+		ai_will_do = {
+			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Four_Year_Plan"
@@ -1792,6 +1809,9 @@ focus_tree = {
 			    }
 		    }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Start_Heydrich_Reforms"
             navy_experience = 15
@@ -1873,6 +1893,9 @@ focus_tree = {
 			    }
 		    }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Cont_Heydrich_Reforms"
             881 = {
@@ -1917,6 +1940,9 @@ focus_tree = {
                 }
             }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Final_Heydrich_Reforms"
             add_tech_bonus = {
@@ -1955,6 +1981,9 @@ focus_tree = {
 			    exists = yes
 				is_subject = no
 			}
+		}
+		ai_will_do = {
+			factor = 40
 		}
 		bypass = {
 		    GER = {
@@ -1999,6 +2028,9 @@ focus_tree = {
                 }
             }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Army_Reforms"
             add_tech_bonus = {
@@ -2032,6 +2064,9 @@ focus_tree = {
                     has_government = paternal_autocrat
                 }
             }
+		}
+		ai_will_do = {
+			factor = 40
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Long_Range_Airforce"
@@ -2077,6 +2112,9 @@ focus_tree = {
                 }
             }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_guns_from_the_fatherland"
 			add_equipment_to_stockpile = { 
@@ -2115,6 +2153,9 @@ focus_tree = {
                     has_government = paternal_autocrat
                 }
             }
+		}
+		ai_will_do = {
+			factor = 40
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Heavy_Equipment"
@@ -2181,7 +2222,9 @@ focus_tree = {
 				}
 			}
 		}
-
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus MAF_Africa_Army"
             country_event = { 
@@ -2246,6 +2289,9 @@ focus_tree = {
 			    }
 		    }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Strategic_Export"
             add_resource = { 
@@ -2296,6 +2342,9 @@ focus_tree = {
 				    include_locked = yes
 			    }
 		    }
+		}
+		ai_will_do = {
+			factor = 40
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_African_Breadbasket"
@@ -2396,11 +2445,12 @@ focus_tree = {
 			    }
 		    }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_African_War_Industries"
-		    else = {
-			    add_war_support = 0.05
-			}
+			add_war_support = 0.05
 			random_owned_controlled_state = {
 			    limit = {
 				    free_building_slots = {
@@ -2497,6 +2547,9 @@ focus_tree = {
 			    }
 		    }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_African_War_Industries"
 			if = {
@@ -2576,6 +2629,9 @@ focus_tree = {
                 }
             }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Die_Volkerschau"
             country_event = { 
@@ -2639,6 +2695,9 @@ focus_tree = {
                 }
             }
 		}
+		ai_will_do = {
+			factor = 40
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Protect_Animals"
             add_stability = 0.05
@@ -2666,6 +2725,9 @@ focus_tree = {
                     has_government = paternal_autocrat
                 }
             }
+		}
+		ai_will_do = {
+			factor = 40
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Kulturkampf"
@@ -2700,12 +2762,12 @@ focus_tree = {
                 }
             }
 		}
-		bypass = {
-		    amount_research_slots > 4
+		ai_will_do = {
+			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Proving_Grounds"
-            add_research_slot = 1
+            add_research_slot_until_five = yes
 		}
 	}
 
@@ -2730,7 +2792,10 @@ focus_tree = {
 			NOT = {
 				has_government = national_populist
 			}
-        }
+		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Back_To_Basics"
             army_experience = 50
@@ -2757,6 +2822,9 @@ focus_tree = {
                 tooltip = MAF_DKG
                 has_government = authoritarian_democrat
             }
+		}
+		ai_will_do = {
+			factor = 60
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Royal_Tours"
@@ -2786,6 +2854,9 @@ focus_tree = {
                 has_government = authoritarian_democrat
             }
 		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {	
             log = "[GetDateText]: [Root.GetName]: Focus MAF_Honorary_Officers"
             add_ideas = MAF_Honorary_Officers_idea
@@ -2808,7 +2879,10 @@ focus_tree = {
                 tooltip = MAF_DKG
                 has_government = authoritarian_democrat
             }
-        }
+		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Bezirk"
             add_stability = 0.10
@@ -2832,13 +2906,13 @@ focus_tree = {
                 tooltip = MAF_DKG
                 has_government = authoritarian_democrat
 			}
-        }
-		bypass = {
-		    amount_research_slots > 4
+		}
+		ai_will_do = {
+			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_African_Studies"
-            add_research_slot = 1
+            add_research_slot_until_five = yes
 		}
 	}
 
@@ -2858,7 +2932,10 @@ focus_tree = {
                 tooltip = MAF_DKG
                 has_government = authoritarian_democrat
 			}
-        }
+		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Strategic_Reserve"
             random_owned_state = {
@@ -2901,6 +2978,9 @@ focus_tree = {
                 has_government = authoritarian_democrat
 			}
 		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Cash_Crops"
             add_ideas = MAF_Cash_Crops_idea
@@ -2936,6 +3016,9 @@ focus_tree = {
 				    include_locked = yes
 			    }
 		    }
+		}
+		ai_will_do = {
+			factor = 60
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_trucks_motherfucker"
@@ -2994,6 +3077,9 @@ focus_tree = {
                 has_government = authoritarian_democrat
 			}
 		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_East_Asian_Exports"
             add_stability = 0.10
@@ -3032,6 +3118,9 @@ focus_tree = {
 				    include_locked = yes
 			    }
 		    }
+		}
+		ai_will_do = {
+			factor = 60
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Cottage_Industries"
@@ -3115,6 +3204,9 @@ focus_tree = {
                 has_government = authoritarian_democrat
 			}
 		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_African_Army"
 			add_manpower = 25000
@@ -3143,6 +3235,9 @@ focus_tree = {
                 tooltip = MAF_DKG
                 has_government = authoritarian_democrat
 			}
+		}
+		ai_will_do = {
+			factor = 60
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Airforce_Infantry"
@@ -3175,6 +3270,9 @@ focus_tree = {
                 tooltip = MAF_DKG
                 has_government = authoritarian_democrat
 			}
+		}
+		ai_will_do = {
+			factor = 60
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Improve_Logistics"
@@ -3239,6 +3337,9 @@ focus_tree = {
                 has_government = authoritarian_democrat
 			}
 		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Spirit_Vorbeck"
             effect_tooltip = { 
@@ -3287,6 +3388,9 @@ focus_tree = {
                 has_government = authoritarian_democrat
 			}
 		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Electronic_Project"
             add_tech_bonus = {
@@ -3322,6 +3426,9 @@ focus_tree = {
                 tooltip = MAF_DKG
                 has_government = authoritarian_democrat
 			}
+		}
+		ai_will_do = {
+			factor = 60
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Konigsburg_Gunners"
@@ -3401,6 +3508,9 @@ focus_tree = {
 			    }
 		    }
 		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Naval_Aerial_Observation"
             add_tech_bonus = {
@@ -3461,6 +3571,9 @@ focus_tree = {
 			    }
 		    }
 		}
+		ai_will_do = {
+			factor = 60
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus MAF_Our_Shipyards"
             546 = {
@@ -3480,947 +3593,6 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Black Monday Adjustment
-	focus = {
-		id = MAF_blackmondayadjustment
-		icon = GFX_goal_bankruptcy
-		x = 40
-		y = 1
-		cost = 1.50
-		available_if_capitulated = yes
-		bypass = {
-			has_global_flag = black_monday 
-		}
-		available = {
-			 always = no 
-		}
-		completion_reward = {
-        log = "[GetDateText]: [Root.GetName]: Focus MAF_Black_Monday"
-
-		}
-	}
-
-	#Focus for Float the Mark
-	focus = {
-		id = MAF_floatthemark
-		icon = GFX_goal_generic_price_controls
-		x = 39
-		y = 2
-		cost = 7.20
-		available_if_capitulated = yes
-		prerequisite = {
-		    focus = MAF_blackmondayadjustment 
-		}
-		completion_reward = {		
-            log = "[GetDateText]: [Root.GetName]: Focus MAF_Float_Mark"
-            if = {
-                limit = { 
-				    has_idea = MAF_Black_Monday_Improved 
-			    }
-                swap_ideas = {
-                    remove_idea = MAF_Black_Monday_Improved
-                    add_idea = MAF_Black_Monday_MoreImproved
-                }
-				add_political_power = -50
-            }
-            else = {
-                swap_ideas = {
-                    remove_idea = MAF_Black_Monday_idea
-                    add_idea = MAF_Black_Monday_Improved
-                }
-				add_political_power = -75
-            }
-		}
-	}
-
-	#Focus for Fiscal Austerity
-	focus = {
-		id = MAF_fiscalausterity
-		icon = GFX_goal_HOL_progressive_tax
-		x = 41
-		y = 2
-		cost = 7.20
-		available_if_capitulated = yes
-		prerequisite = { focus = MAF_blackmondayadjustment }
-		completion_reward = {
-	        log = "[GetDateText]: [Root.GetName]: Focus MAF_Fiscal_Austerity"
-            if = {
-                limit = { 
-				    has_idea = MAF_Black_Monday_Improved 
-			    }
-                swap_ideas = {
-                    remove_idea = MAF_Black_Monday_Improved
-                    add_idea = MAF_Black_Monday_MoreImproved
-                }
-				add_political_power = -50
-            }
-            else = {
-                swap_ideas = {
-                    remove_idea = MAF_Black_Monday_idea
-                    add_idea = MAF_Black_Monday_Improved
-                }
-				add_political_power = -75
-            }
-		}
-	}
-
-	#Focus for 1937 Budget
-	focus = {
-		id = MAF_1937budget
-		icon = GFX_focus_empty_coffers
-		x = 40
-		y = 3
-		cost = 1.50
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_floatthemark 
-		}
-		prerequisite = { 
-			focus = MAF_fiscalausterity 
-		}
-		bypass = {
-			OR = { 
-			    has_idea = MAF_Black_Monday_1937_civs 
-				has_idea = MAF_Black_Monday_1937_mils 
-			} 
-		}
-		available = {
-			always = no 
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_1937_Budget"
-            custom_effect_tooltip = MAF_BM_Improvement_Tooltip
-		}
-	}
-
-	#Focus for 1938 Budget
-	focus = {
-		id = MAF_1938budget
-		icon = GFX_goal_foreign_diplomacy
-		x = 40
-		y = 5
-		cost = 1.50
-		available_if_capitulated = yes
-		prerequisite = { 
-		    focus = MAF_1937budget 
-		}
-		bypass = {
-			OR = { 
-			    has_idea = MAF_Black_Monday_1938_civs 
-				has_idea = MAF_Black_Monday_1938_mils 
-			} 
-		}
-		available = {
-			always = no 
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_1938_Budget"
-            custom_effect_tooltip = MAF_BM_Improvement_Tooltip
-		}
-	}
-
-	#Focus for The University of Kinshasa
-	focus = {
-		id = MAF_theuniversityofkinshasa
-		icon = GFX_goal_KTG_Bookstack
-		x = 43
-		y = 6
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-		    focus = MAF_1938budget 
-		}
-		bypass = {
-		    amount_research_slots > 4
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_University_Kinshala"
-            add_research_slot = 1
-            add_popularity = { 
-			    ideology = social_liberal 
-				popularity = 0.05 
-			}
-		}
-	}
-
-	#Focus for 1939 Budget
-	focus = {
-		id = MAF_1939budget
-		icon = GFX_goal_national_mobilization
-		x = 40
-		y = 6
-		cost = 1.50
-		available_if_capitulated = yes
-		prerequisite = { 
-		    focus = MAF_1938budget 
-		}
-		bypass = {
-			has_idea = MAF_Black_Monday_1939 
-		}
-		available = {
-			always = no 
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_1939_Budget"
-            custom_effect_tooltip = MAF_BM_Improvement_Tooltip
-		}
-	}
-
-	#Focus for 1940 Budget
-	focus = {
-		id = MAF_1940budget
-		icon = GFX_goal_bag_of_money
-		x = 40
-		y = 7
-		cost = 1.50
-		available_if_capitulated = yes
-		prerequisite = { 
-		    focus = MAF_1939budget 
-		}
-		bypass = {
-			has_idea = MAF_Post_War 
-		}
-		available = {
-			always = no 
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Post_War_Budget"
-            custom_effect_tooltip = MAF_BM_Improvement_Tooltip
-		}
-	}
-
-	#Focus for The Cape to Cairo Railway
-	focus = {
-		id = MAF_thecapetocairorailway
-		icon = GFX_goal_MAF_Cape_Cairo
-		x = 39
-		y = 4
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-		    focus = MAF_1937budget 
-		}
-		available = {
-		    546 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-			    free_building_slots = {
-				    building = infrastructure
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-			965 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-			    free_building_slots = {
-				    building = infrastructure
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Cape_Cairo"
-            546 = { 
-			    add_extra_state_shared_building_slots = 2
-			    add_building_construction = { 
-			        type = infrastructure level = 3 
-					instant_build = yes
-			    }
-			}
-			965 = { 
-			    add_extra_state_shared_building_slots = 2
-			    add_building_construction = { 
-			        type = infrastructure level = 3 
-					instant_build = yes
-			    }
-			}
-		}
-	}
-
-	#Focus for Tanganjika to Uganda
-	focus = {
-		id = MAF_tanganjikatouganda
-		icon = GFX_goal_MAF_Tanzania_to_Uganda
-		x = 38
-		y = 6
-		cost = 2.90
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_1938budget 
-		}
-		prerequisite = { 
-			focus = MAF_thecapetocairorailway 
-		}
-		available = {
-		    548 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-			    free_building_slots = {
-				    building = infrastructure
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-			918 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-			    free_building_slots = {
-				    building = infrastructure
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Tanzania_Uganda"
-			548 = { 
-			    add_extra_state_shared_building_slots = 2
-			    add_building_construction = { 
-			        type = infrastructure level = 3 
-					instant_build = yes
-			    }
-			}
-			918 = { 
-			    add_extra_state_shared_building_slots = 2
-			    add_building_construction = { 
-			        type = infrastructure level = 3 
-					instant_build = yes
-			    }
-			}
-		}
-	}
-
-	#Focus for Kampala to Khartoum
-	focus = {
-		id = MAF_kampalatokhartoum
-		icon = GFX_goal_MAF_Kampala_to_Khartoum
-		x = 38
-		y = 7
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_1939budget 
-		}
-		prerequisite = { 
-			focus = MAF_tanganjikatouganda 
-		}
-		available = {	
-		    SAF = {
-				exists = yes
-			}
-			EGY = {
-				exists = yes
-			}
-            NOT = {
-                has_war_with = SAF
-                has_war_with = EGY
-            }
-		}
-		bypass = {
-		    SAF = {
-			    exists = no
-			}
-			EGY = {
-			    exists = no
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Kampala_Khartoum"
-            add_manpower = -10000
-            add_ideas = MAF_CtC_Rail
-            SAF = {
-			    country_event = { 
-				    id = mittel.105
-				}
-			}
-            EGY = {
-			    country_event = { 
-				    id = mittel.106 
-				}
-			}
-		}
-	}
-
-	#Focus for Kampala to Addis Abbaba
-	focus = {
-		id = MAF_kampalatoaddisabbaba
-		icon = GFX_goal_MAF_Kampala_to_Addis_Abba
-		x = 39
-		y = 8
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_1940budget 
-		}
-		prerequisite = { 
-			focus = MAF_kampalatokhartoum 
-		}
-		available = {
-			ETH = {
-				exists = yes
-			}
-            NOT = {
-                has_war_with = ETH
-            }
-            547 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-			    free_building_slots = {
-				    building = infrastructure
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-			925 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-			    free_building_slots = {
-				    building = infrastructure
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Connect_Addis"
-			547 = { 
-			    add_extra_state_shared_building_slots = 2
-			    add_building_construction = { 
-			        type = infrastructure level = 3 
-					instant_build = yes
-			    }
-			}
-			925 = { 
-			    add_extra_state_shared_building_slots = 2
-			    add_building_construction = { 
-			        type = infrastructure level = 3 
-					instant_build = yes
-			    }
-			}
-            ETH = {
-			    country_event = { 
-				    id = mittel.107 
-				}
-			}
-		}
-	}
-
-	#Focus for Industrial Development
-	focus = {
-		id = MAF_industrialdevelopment
-		icon = GFX_goal_construction_engineering
-		x = 41
-		y = 4
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-		    focus = MAF_1937budget 
-		}
-		available = {
-		    any_owned_state = {
-			    is_controlled_by = ROOT
-			    free_building_slots = {
-				    building = industrial_complex
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Industrial_Development"
-            add_tech_bonus = {
-                name = industrial_bonus
-                bonus = 1
-                uses = 2
-                category = industry
-            }
-			random_owned_controlled_state = {
-			    limit = {
-				    free_building_slots = {
-					    building = industrial_complex
-					    size > 0
-					    include_locked = yes
-				    }
-				    OR = {
-					    is_in_home_area = yes
-					    NOT = {
-						    owner = {
-							    any_owned_state = {
-								    free_building_slots = {
-									    building = industrial_complex
-									    size > 0
-									    include_locked = yes
-								    }
-								is_in_home_area = yes
-							    }
-						    }
-					    }
-				    }
-			    }
-			    add_extra_state_shared_building_slots = 1
-			    add_building_construction = {
-				    type = industrial_complex
-				    level = 1
-				    instant_build = yes
-			    }
-		    }
-		}
-	}
-
-	#Focus for Light Industrial Development
-	focus = {
-		id = MAF_lightindustrialdevelopment
-		icon = GFX_goal_factory_complex
-		x = 42
-		y = 5
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_industrialdevelopment 
-		}
-		prerequisite = { 
-			focus = MAF_resourcerefinement 
-		}
-		available = {
-		    any_owned_state = {
-			    is_controlled_by = ROOT
-			    free_building_slots = {
-				    building = industrial_complex
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Light_Industrial_Development"
-			random_owned_controlled_state = {
-			    limit = {
-				    free_building_slots = {
-					    building = industrial_complex
-					    size > 0
-					    include_locked = yes
-				    }
-				    OR = {
-					    is_in_home_area = yes
-					    NOT = {
-						    owner = {
-							    any_owned_state = {
-								    free_building_slots = {
-									    building = industrial_complex
-									    size > 0
-									    include_locked = yes
-								    }
-								is_in_home_area = yes
-							    }
-						    }
-					    }
-				    }
-			    }
-			    add_extra_state_shared_building_slots = 1
-			    add_building_construction = {
-				    type = industrial_complex
-				    level = 1
-				    instant_build = yes
-			    }
-		    }
-			random_owned_controlled_state = {
-			    limit = {
-				    free_building_slots = {
-					    building = industrial_complex
-					    size > 0
-					    include_locked = yes
-				    }
-				    OR = {
-					    is_in_home_area = yes
-					    NOT = {
-						    owner = {
-							    any_owned_state = {
-								    free_building_slots = {
-									    building = industrial_complex
-									    size > 0
-									    include_locked = yes
-								    }
-								is_in_home_area = yes
-							    }
-						    }
-					    }
-				    }
-			    }
-			    add_extra_state_shared_building_slots = 1
-			    add_building_construction = {
-				    type = industrial_complex
-				    level = 1
-				    instant_build = yes
-			    }
-		    }
-        }
-    }
-
-	#Focus for War Industries
-	focus = {
-		id = MAF_warindustries
-		icon = GFX_goal_national_artillery
-		x = 42
-		y = 7
-		cost = 2.90
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_lightindustrialdevelopment 
-		}
-		prerequisite = { 
-			focus = MAF_1938budget 
-		}
-		available = {
-		    OR = {
-		        has_war = yes 
-				has_idea = partial_economic_mobilisation
-				has_idea = war_economy
-				has_idea = tot_economic_mobilisation
-			}
-		    any_owned_state = {
-			    is_controlled_by = ROOT
-			    free_building_slots = {
-				    building = arms_factory
-				    size > 0
-				    include_locked = yes
-			    }
-		    }
-		}
-		completion_reward = {
-		    random_owned_controlled_state = {
-			    limit = {
-				    free_building_slots = {
-					    building = arms_factory
-					    size > 0
-					    include_locked = yes
-				    }
-				    OR = {
-					    is_in_home_area = yes
-					    NOT = {
-						    owner = {
-							    any_owned_state = {
-								    free_building_slots = {
-									    building = arms_factory
-									    size > 0
-									    include_locked = yes
-								    }
-								is_in_home_area = yes
-							    }
-						    }
-					    }
-				    }
-			    }
-			    add_extra_state_shared_building_slots = 1
-			    add_building_construction = {
-				    type = arms_factory
-				    level = 1
-				    instant_build = yes
-			    }
-		    }
-		    random_owned_controlled_state = {
-			    limit = {
-				    free_building_slots = {
-					    building = arms_factory
-					    size > 0
-					    include_locked = yes
-				    }
-				    OR = {
-					    is_in_home_area = yes
-					    NOT = {
-						    owner = {
-							    any_owned_state = {
-								    free_building_slots = {
-									    building = arms_factory
-									    size > 0
-									    include_locked = yes
-								    }
-								is_in_home_area = yes
-							    }
-						    }
-					    }
-				    }
-			    }
-			    add_extra_state_shared_building_slots = 1
-			    add_building_construction = {
-				    type = arms_factory
-				    level = 1
-				    instant_build = yes
-			    }
-		    }
-		}
-	}
-
-	#Focus for Resource Extraction
-	focus = {
-		id = MAF_resourceextraction
-		icon = GFX_goal_KTG_Rubber_Farming
-		x = 43
-		y = 2
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-		    focus = MAF_blackmondayadjustment 
-		}
-		available = {
-		    927 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-		    }
-			538 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-		    }
-			1025 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-		    }
-	    }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Resource_Extraction"
-            add_tech_bonus = {
-                name = industrial_bonus
-                bonus = 1
-                uses = 1
-                technology = excavation1
-                technology = excavation2
-                technology = excavation3
-                technology = excavation4
-                technology = excavation5
-            }
-            add_resource = { 
-			    type = rubber 
-				amount = 12
-				state = 927 
-			}
-            add_resource = { 
-			    type = rubber 
-				amount = 18
-				state = 538 
-			}
-            add_resource = { 
-			    type = rubber 
-			    amount = 16 
-			    state = 1025 
-			}
-		}
-	}
-
-	#Focus for Improved Resource Extraction
-	focus = {
-		id = MAF_improvedresourceextraction
-		icon = GFX_goal_basic_oil
-		x = 42
-		y = 3
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_resourceextraction 
-		}
-		available = {
-		    558 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-		    }
-	    }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Improved_Resource_Extraction"
-            add_tech_bonus = {
-                name = industrial_bonus
-                bonus = 1
-                uses = 1
-                technology = excavation1
-                technology = excavation2
-                technology = excavation3
-                technology = excavation4
-                technology = excavation5
-            }
-            add_resource = { 
-			    type = oil 
-				amount = 16 
-				state = 558 
-			}
-		}
-	}
-
-	#Focus for Superior Resource Extraction
-	focus = {
-		id = MAF_superiorresourceextraction
-		icon = GFX_focus_generic_tungsten
-		x = 44
-		y = 3
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_resourceextraction 
-		}
-		available = {
-		    541 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-		    }
-			956 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-		    }
-	    }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Superior_Resource_Extraction"
-			add_tech_bonus = {
-                name = industrial_bonus
-                bonus = 1
-                uses = 1
-                technology = excavation1
-                technology = excavation2
-                technology = excavation3
-                technology = excavation4
-                technology = excavation5
-            }
-            add_resource = { 
-			    type = tungsten 
-				amount = 16 
-				state = 541 
-			}
-            add_resource = { 
-			    type = tungsten 
-				amount = 16 
-				state = 956 
-			}
-		}
-	}
-
-	#Focus for Resource Refinement
-	focus = {
-		id = MAF_resourcerefinement
-		icon = GFX_focus_generic_steel
-		x = 43
-		y = 4
-		cost = 4.40
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = MAF_improvedresourceextraction 
-		}
-		prerequisite = { 
-			focus = MAF_superiorresourceextraction 
-		}
-		available = {
-		    546 = {
-			    owner = {
-				    OR = { 
-					    tag = ROOT 
-						OR = { 
-						    is_subject_of = ROOT  
-						    is_in_faction_with = ROOT 
-						} 
-					}
-			    }
-		    }
-	    }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus MAF_Resource_Refinement"
-            add_tech_bonus = {
-                name = industrial_bonus
-                bonus = 1
-                uses = 1
-                technology = excavation1
-                technology = excavation2
-                technology = excavation3
-                technology = excavation4
-                technology = excavation5
-            }
-            add_resource = { 
-			    type = steel 
-				amount = 20 
-				state = 546 
-			}
-		}
-	}
-
 	#Focus for Meet The New Boss?
 	focus = {
 		id = MAF_meetthenewboss
@@ -4431,7 +3603,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_reinforcenorthrhodesia }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			ZAM = {
@@ -4458,7 +3630,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_themadagascarfatherlandsplan }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_deal_with_heydrich
@@ -4477,7 +3649,7 @@ focus_tree = {
 		prerequisite = { focus = MAF_einenrupiefrdeinegedanken }
 		
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KEN = {
@@ -4505,7 +3677,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_sonderfahrtsnabe }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			custom_effect_tooltip = MAF_castles_in_ostafrika
@@ -4529,7 +3701,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_huptlingstumme }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KTG = {
@@ -4549,7 +3721,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_vereinigtestahlwerkeagcongo }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KTG = {
@@ -4576,7 +3748,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_siedlungsstadtluluaburg }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			KTG = {
@@ -4608,7 +3780,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_theruleofmoney }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			CIV = {
@@ -4631,7 +3803,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = MAF_regulatoryblindspot }
 		ai_will_do = {
-			factor = 1
+			factor = 30
 		}
 		completion_reward = {
 			CIV = {
@@ -5165,5 +4337,1010 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS }
+	}
+	
+	#Focus for Black Monday Adjustment
+	shared_focus = {
+		id = MAF_blackmondayadjustment
+		icon = GFX_goal_bankruptcy
+		x = 40
+		y = 1
+		offset = {
+			x = -11
+			y = 4
+			trigger = {
+				has_focus_tree = MAF-RFG
+			}
+		}
+		cost = 1.50
+		available_if_capitulated = yes
+		bypass = {
+			has_global_flag = black_monday 
+		}
+		available = {
+			 always = no 
+		}
+		completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus MAF_Black_Monday"
+
+		}
+	}
+
+	#Focus for Float the Mark
+	shared_focus = {
+		id = MAF_floatthemark
+		icon = GFX_goal_generic_price_controls
+		x = -1
+		y = 1
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 7.20
+		available_if_capitulated = yes
+		prerequisite = {
+		    focus = MAF_blackmondayadjustment 
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {		
+            log = "[GetDateText]: [Root.GetName]: Focus MAF_Float_Mark"
+            if = {
+                limit = { 
+				    has_idea = MAF_Black_Monday_Improved 
+			    }
+                swap_ideas = {
+                    remove_idea = MAF_Black_Monday_Improved
+                    add_idea = MAF_Black_Monday_MoreImproved
+                }
+				add_political_power = -50
+            }
+            else = {
+                swap_ideas = {
+                    remove_idea = MAF_Black_Monday_idea
+                    add_idea = MAF_Black_Monday_Improved
+                }
+				add_political_power = -75
+            }
+		}
+	}
+
+	#Focus for Fiscal Austerity
+	shared_focus = {
+		id = MAF_fiscalausterity
+		icon = GFX_goal_HOL_progressive_tax
+		x = 1
+		y = 1
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 7.20
+		available_if_capitulated = yes
+		prerequisite = { focus = MAF_blackmondayadjustment }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+	        log = "[GetDateText]: [Root.GetName]: Focus MAF_Fiscal_Austerity"
+            if = {
+                limit = { 
+				    has_idea = MAF_Black_Monday_Improved 
+			    }
+                swap_ideas = {
+                    remove_idea = MAF_Black_Monday_Improved
+                    add_idea = MAF_Black_Monday_MoreImproved
+                }
+				add_political_power = -50
+            }
+            else = {
+                swap_ideas = {
+                    remove_idea = MAF_Black_Monday_idea
+                    add_idea = MAF_Black_Monday_Improved
+                }
+				add_political_power = -75
+            }
+		}
+	}
+
+	#Focus for 1937 Budget
+	shared_focus = {
+		id = MAF_1937budget
+		icon = GFX_focus_empty_coffers
+		x = 0
+		y = 2
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 1.50
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_floatthemark 
+		}
+		prerequisite = { 
+			focus = MAF_fiscalausterity 
+		}
+		bypass = {
+			OR = { 
+			    has_idea = MAF_Black_Monday_1937_civs 
+				has_idea = MAF_Black_Monday_1937_mils 
+			} 
+		}
+		available = {
+			always = no 
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_1937_Budget"
+            custom_effect_tooltip = MAF_BM_Improvement_Tooltip
+		}
+	}
+
+	#Focus for 1938 Budget
+	shared_focus = {
+		id = MAF_1938budget
+		icon = GFX_goal_foreign_diplomacy
+		x = 0
+		y = 4
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 1.50
+		available_if_capitulated = yes
+		prerequisite = { 
+		    focus = MAF_1937budget 
+		}
+		bypass = {
+			OR = { 
+			    has_idea = MAF_Black_Monday_1938_civs 
+				has_idea = MAF_Black_Monday_1938_mils 
+			} 
+		}
+		available = {
+			always = no 
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_1938_Budget"
+            custom_effect_tooltip = MAF_BM_Improvement_Tooltip
+		}
+	}
+
+	#Focus for The University of Kinshasa
+	shared_focus = {
+		id = MAF_theuniversityofkinshasa
+		icon = GFX_goal_KTG_Bookstack
+		x = 3
+		y = 5
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+		    focus = MAF_1938budget 
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_University_Kinshala"
+            add_research_slot_until_five = yes
+            add_popularity = { 
+			    ideology = social_liberal 
+				popularity = 0.05 
+			}
+		}
+	}
+
+	#Focus for 1939 Budget
+	shared_focus = {
+		id = MAF_1939budget
+		icon = GFX_goal_national_mobilization
+		x = 0
+		y = 5
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 1.50
+		available_if_capitulated = yes
+		prerequisite = { 
+		    focus = MAF_1938budget 
+		}
+		bypass = {
+			has_idea = MAF_Black_Monday_1939 
+		}
+		available = {
+			always = no 
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_1939_Budget"
+            custom_effect_tooltip = MAF_BM_Improvement_Tooltip
+		}
+	}
+
+	#Focus for 1940 Budget
+	shared_focus = {
+		id = MAF_1940budget
+		icon = GFX_goal_bag_of_money
+		x = 0
+		y = 6
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 1.50
+		available_if_capitulated = yes
+		prerequisite = { 
+		    focus = MAF_1939budget 
+		}
+		bypass = {
+			has_idea = MAF_Post_War 
+		}
+		available = {
+			always = no 
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Post_War_Budget"
+            custom_effect_tooltip = MAF_BM_Improvement_Tooltip
+		}
+	}
+
+	#Focus for The Cape to Cairo Railway
+	shared_focus = {
+		id = MAF_thecapetocairorailway
+		icon = GFX_goal_MAF_Cape_Cairo
+		x = -1
+		y = 3
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+		    focus = MAF_1937budget 
+		}
+		available = {
+		    546 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+			    free_building_slots = {
+				    building = infrastructure
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+			965 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+			    free_building_slots = {
+				    building = infrastructure
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Cape_Cairo"
+            546 = { 
+			    add_extra_state_shared_building_slots = 2
+			    add_building_construction = { 
+			        type = infrastructure level = 3 
+					instant_build = yes
+			    }
+			}
+			965 = { 
+			    add_extra_state_shared_building_slots = 2
+			    add_building_construction = { 
+			        type = infrastructure level = 3 
+					instant_build = yes
+			    }
+			}
+		}
+	}
+
+	#Focus for Tanganjika to Uganda
+	shared_focus = {
+		id = MAF_tanganjikatouganda
+		icon = GFX_goal_MAF_Tanzania_to_Uganda
+		x = -2
+		y = 5
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 2.90
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_1938budget 
+		}
+		prerequisite = { 
+			focus = MAF_thecapetocairorailway 
+		}
+		available = {
+		    548 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+			    free_building_slots = {
+				    building = infrastructure
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+			918 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+			    free_building_slots = {
+				    building = infrastructure
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Tanzania_Uganda"
+			548 = { 
+			    add_extra_state_shared_building_slots = 2
+			    add_building_construction = { 
+			        type = infrastructure level = 3 
+					instant_build = yes
+			    }
+			}
+			918 = { 
+			    add_extra_state_shared_building_slots = 2
+			    add_building_construction = { 
+			        type = infrastructure level = 3 
+					instant_build = yes
+			    }
+			}
+		}
+	}
+
+	#Focus for Kampala to Khartoum
+	shared_focus = {
+		id = MAF_kampalatokhartoum
+		icon = GFX_goal_MAF_Kampala_to_Khartoum
+		x = -2
+		y = 6
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_1939budget 
+		}
+		prerequisite = { 
+			focus = MAF_tanganjikatouganda 
+		}
+		available = {	
+		    SAF = {
+				exists = yes
+			}
+			EGY = {
+				exists = yes
+			}
+            NOT = {
+                has_war_with = SAF
+                has_war_with = EGY
+            }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		bypass = {
+		    SAF = {
+			    exists = no
+			}
+			EGY = {
+			    exists = no
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Kampala_Khartoum"
+            add_manpower = -10000
+            add_ideas = MAF_CtC_Rail
+            SAF = {
+			    country_event = { 
+				    id = mittel.105
+				}
+			}
+            EGY = {
+			    country_event = { 
+				    id = mittel.106 
+				}
+			}
+		}
+	}
+
+	#Focus for Kampala to Addis Abbaba
+	shared_focus = {
+		id = MAF_kampalatoaddisabbaba
+		icon = GFX_goal_MAF_Kampala_to_Addis_Abba
+		x = -1
+		y = 7
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_1940budget 
+		}
+		prerequisite = { 
+			focus = MAF_kampalatokhartoum 
+		}
+		available = {
+			ETH = {
+				exists = yes
+			}
+            NOT = {
+                has_war_with = ETH
+            }
+            547 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+			    free_building_slots = {
+				    building = infrastructure
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+			925 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+			    free_building_slots = {
+				    building = infrastructure
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Connect_Addis"
+			547 = { 
+			    add_extra_state_shared_building_slots = 2
+			    add_building_construction = { 
+			        type = infrastructure level = 3 
+					instant_build = yes
+			    }
+			}
+			925 = { 
+			    add_extra_state_shared_building_slots = 2
+			    add_building_construction = { 
+			        type = infrastructure level = 3 
+					instant_build = yes
+			    }
+			}
+            ETH = {
+			    country_event = { 
+				    id = mittel.107 
+				}
+			}
+		}
+	}
+
+	#Focus for Industrial Development
+	shared_focus = {
+		id = MAF_industrialdevelopment
+		icon = GFX_goal_construction_engineering
+		x = 1
+		y = 3
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+		    focus = MAF_1937budget 
+		}
+		available = {
+		    any_owned_state = {
+			    is_controlled_by = ROOT
+			    free_building_slots = {
+				    building = industrial_complex
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Industrial_Development"
+            add_tech_bonus = {
+                name = industrial_bonus
+                bonus = 1
+                uses = 2
+                category = industry
+            }
+			random_owned_controlled_state = {
+			    limit = {
+				    free_building_slots = {
+					    building = industrial_complex
+					    size > 0
+					    include_locked = yes
+				    }
+				    OR = {
+					    is_in_home_area = yes
+					    NOT = {
+						    owner = {
+							    any_owned_state = {
+								    free_building_slots = {
+									    building = industrial_complex
+									    size > 0
+									    include_locked = yes
+								    }
+								is_in_home_area = yes
+							    }
+						    }
+					    }
+				    }
+			    }
+			    add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				    type = industrial_complex
+				    level = 1
+				    instant_build = yes
+			    }
+		    }
+		}
+	}
+
+	#Focus for Light Industrial Development
+	shared_focus = {
+		id = MAF_lightindustrialdevelopment
+		icon = GFX_goal_factory_complex
+		x = 2
+		y = 4
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_industrialdevelopment 
+		}
+		prerequisite = { 
+			focus = MAF_resourcerefinement 
+		}
+		available = {
+		    any_owned_state = {
+			    is_controlled_by = ROOT
+			    free_building_slots = {
+				    building = industrial_complex
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Light_Industrial_Development"
+			random_owned_controlled_state = {
+			    limit = {
+				    free_building_slots = {
+					    building = industrial_complex
+					    size > 0
+					    include_locked = yes
+				    }
+				    OR = {
+					    is_in_home_area = yes
+					    NOT = {
+						    owner = {
+							    any_owned_state = {
+								    free_building_slots = {
+									    building = industrial_complex
+									    size > 0
+									    include_locked = yes
+								    }
+								is_in_home_area = yes
+							    }
+						    }
+					    }
+				    }
+			    }
+			    add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				    type = industrial_complex
+				    level = 1
+				    instant_build = yes
+			    }
+		    }
+			random_owned_controlled_state = {
+			    limit = {
+				    free_building_slots = {
+					    building = industrial_complex
+					    size > 0
+					    include_locked = yes
+				    }
+				    OR = {
+					    is_in_home_area = yes
+					    NOT = {
+						    owner = {
+							    any_owned_state = {
+								    free_building_slots = {
+									    building = industrial_complex
+									    size > 0
+									    include_locked = yes
+								    }
+								is_in_home_area = yes
+							    }
+						    }
+					    }
+				    }
+			    }
+			    add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				    type = industrial_complex
+				    level = 1
+				    instant_build = yes
+			    }
+		    }
+        }
+    }
+
+	#Focus for War Industries
+	shared_focus = {
+		id = MAF_warindustries
+		icon = GFX_goal_national_artillery
+		x = 2
+		y = 6
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 2.90
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_lightindustrialdevelopment 
+		}
+		prerequisite = { 
+			focus = MAF_1938budget 
+		}
+		available = {
+		    OR = {
+		        has_war = yes 
+				has_idea = partial_economic_mobilisation
+				has_idea = war_economy
+				has_idea = tot_economic_mobilisation
+			}
+		    any_owned_state = {
+			    is_controlled_by = ROOT
+			    free_building_slots = {
+				    building = arms_factory
+				    size > 0
+				    include_locked = yes
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+		    random_owned_controlled_state = {
+			    limit = {
+				    free_building_slots = {
+					    building = arms_factory
+					    size > 0
+					    include_locked = yes
+				    }
+				    OR = {
+					    is_in_home_area = yes
+					    NOT = {
+						    owner = {
+							    any_owned_state = {
+								    free_building_slots = {
+									    building = arms_factory
+									    size > 0
+									    include_locked = yes
+								    }
+								is_in_home_area = yes
+							    }
+						    }
+					    }
+				    }
+			    }
+			    add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				    type = arms_factory
+				    level = 1
+				    instant_build = yes
+			    }
+		    }
+		    random_owned_controlled_state = {
+			    limit = {
+				    free_building_slots = {
+					    building = arms_factory
+					    size > 0
+					    include_locked = yes
+				    }
+				    OR = {
+					    is_in_home_area = yes
+					    NOT = {
+						    owner = {
+							    any_owned_state = {
+								    free_building_slots = {
+									    building = arms_factory
+									    size > 0
+									    include_locked = yes
+								    }
+								is_in_home_area = yes
+							    }
+						    }
+					    }
+				    }
+			    }
+			    add_extra_state_shared_building_slots = 1
+			    add_building_construction = {
+				    type = arms_factory
+				    level = 1
+				    instant_build = yes
+			    }
+		    }
+		}
+	}
+
+	#Focus for Resource Extraction
+	shared_focus = {
+		id = MAF_resourceextraction
+		icon = GFX_goal_KTG_Rubber_Farming
+		x = 3
+		y = 1
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+		    focus = MAF_blackmondayadjustment 
+		}
+		available = {
+		    927 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+		    }
+			538 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+		    }
+			1025 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Resource_Extraction"
+            add_tech_bonus = {
+                name = industrial_bonus
+                bonus = 1
+                uses = 1
+                technology = excavation1
+                technology = excavation2
+                technology = excavation3
+                technology = excavation4
+                technology = excavation5
+            }
+            add_resource = { 
+			    type = rubber 
+				amount = 12
+				state = 927 
+			}
+            add_resource = { 
+			    type = rubber 
+				amount = 18
+				state = 538 
+			}
+            add_resource = { 
+			    type = rubber 
+			    amount = 16 
+			    state = 1025 
+			}
+		}
+	}
+
+	#Focus for Improved Resource Extraction
+	shared_focus = {
+		id = MAF_improvedresourceextraction
+		icon = GFX_goal_basic_oil
+		x = 2
+		y = 2
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_resourceextraction 
+		}
+		available = {
+		    558 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Improved_Resource_Extraction"
+            add_tech_bonus = {
+                name = industrial_bonus
+                bonus = 1
+                uses = 1
+                technology = excavation1
+                technology = excavation2
+                technology = excavation3
+                technology = excavation4
+                technology = excavation5
+            }
+            add_resource = { 
+			    type = oil 
+				amount = 16 
+				state = 558 
+			}
+		}
+	}
+
+	#Focus for Superior Resource Extraction
+	shared_focus = {
+		id = MAF_superiorresourceextraction
+		icon = GFX_focus_generic_tungsten
+		x = 4
+		y = 2
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_resourceextraction 
+		}
+		available = {
+		    541 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+		    }
+			956 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Superior_Resource_Extraction"
+			add_tech_bonus = {
+                name = industrial_bonus
+                bonus = 1
+                uses = 1
+                technology = excavation1
+                technology = excavation2
+                technology = excavation3
+                technology = excavation4
+                technology = excavation5
+            }
+            add_resource = { 
+			    type = tungsten 
+				amount = 16 
+				state = 541 
+			}
+            add_resource = { 
+			    type = tungsten 
+				amount = 16 
+				state = 956 
+			}
+		}
+	}
+
+	#Focus for Resource Refinement
+	shared_focus = {
+		id = MAF_resourcerefinement
+		icon = GFX_focus_generic_steel
+		x = 3
+		y = 3
+		relative_position_id = MAF_blackmondayadjustment
+		cost = 4.40
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAF_improvedresourceextraction 
+		}
+		prerequisite = { 
+			focus = MAF_superiorresourceextraction 
+		}
+		available = {
+		    546 = {
+			    owner = {
+				    OR = { 
+					    tag = ROOT 
+						OR = { 
+						    is_subject_of = ROOT  
+						    is_in_faction_with = ROOT 
+						} 
+					}
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAF_Resource_Refinement"
+            add_tech_bonus = {
+                name = industrial_bonus
+                bonus = 1
+                uses = 1
+                technology = excavation1
+                technology = excavation2
+                technology = excavation3
+                technology = excavation4
+                technology = excavation5
+            }
+            add_resource = { 
+			    type = steel 
+				amount = 20 
+				state = 546 
+			}
+		}
 	}
 }
